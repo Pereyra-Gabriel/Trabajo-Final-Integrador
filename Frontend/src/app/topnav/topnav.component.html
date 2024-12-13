@@ -1,39 +1,43 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm">
   <div class="container-fluid">
-    <!-- Botón Home -->
-    <a class="navbar-brand" routerLink="/home">Inicio</a>
+    
+    <a class="navbar-brand" routerLink="/home">
+      Inicio
+    </a>
+    
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="/productos">Productos</a>
+          <a class="nav-link" routerLink="/productos" aria-current="page">Productos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="/categorias">Categorias</a>
+          <a class="nav-link" routerLink="/categorias">Categorias</a>
         </li>
         <li class="nav-item" *ngIf="isLoggedIn && isAdmin">
-          <a class="nav-link" aria-current="page" routerLink="/admin">Admin Dashboard</a>
+          <a class="nav-link" routerLink="/admin">Admin Dashboard</a>
         </li>
-        </ul>
-    </div>
+      </ul>
 
-    <!-- Carrito -->
-    <div class="d-flex align-items-center me-3">
-      <app-carrito-icon></app-carrito-icon>
-    </div>
+      
+      <div class="d-flex align-items-center me-3">
+        <app-carrito-icon></app-carrito-icon>
+      </div>
 
-    <!-- Login/Logout a la derecha -->
-    <div class="d-flex ms-auto">
-      <button *ngIf="!isLoggedIn" class="btn btn-sm btn-primary me-2" (click)="login()">
-        <fa-icon [icon]="faSignIn"></fa-icon>
-        <span class="d-none d-md-inline"> Login</span>
-      </button>
-      <button *ngIf="isLoggedIn" class="btn btn-sm btn-danger" (click)="logout()">
-        <fa-icon [icon]="faSignOut"></fa-icon>
-        <span class="d-none d-md-inline"> Logout</span>
-      </button>
+      
+      <div class="d-flex ms-auto">
+        <button *ngIf="!isLoggedIn" class="btn btn-sm btn-outline-primary me-2" (click)="login()">
+          <fa-icon [icon]="faSignIn"></fa-icon>
+          <span class="d-none d-md-inline">Login</span>
+        </button>
+        <button *ngIf="isLoggedIn" class="btn btn-sm btn-outline-danger" (click)="logout()">
+          <fa-icon [icon]="faSignOut"></fa-icon>
+          <span class="d-none d-md-inline">Logout</span>
+        </button>
+      </div>
     </div>
   </div>
 </nav>

@@ -1,0 +1,47 @@
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+  }
+
+  .table-hover tbody tr:hover {
+    background-color: #f1f5fa;
+  }
+
+  .table-dark {
+    background-color: #343a40;
+    color: white;
+  }
+
+  .table-dark th {
+    border-color: #454d55;
+  }
+
+  .btn-success {
+    background-color: #198754;
+    border-color: #198754;
+  }
+
+  .btn-info {
+    background-color: #0dcaf0;
+    border-color: #0dcaf0;
+  }
+
+  .btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+  }
+
+  .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+
+  /* Responsividad adicional */
+  @media (max-width: 768px) {
+    .btn span {
+      display: none;
+    }
+
+    .btn {
+      font-size: 0.875rem;
+    }
+  }

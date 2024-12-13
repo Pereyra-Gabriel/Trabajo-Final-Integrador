@@ -1,31 +1,33 @@
 <div class="container-fluid">
-    <h1 class="text-center p-4">Administrar</h1>
-    <div class="row justify-content-center">
-        <div class="row col-6">
-            <div class="btn-group" role="group" aria-label="Admin options">
+    <h2 class="text-center p-4 bg-primary text-white rounded shadow">Panel de Administración</h2>
+    
+    <div class="row justify-content-center my-4">
+        <div class="col-md-6 col-sm-12 text-center">
+            <div class="btn-group" role="group" aria-label="Opciones de Administración">
                 <button 
                     type="button" 
-                    class="btn btn-primary" 
+                    class="btn btn-outline-primary"
                     [class.active]="componenteActual === 'productos'"
                     (click)="cargarComponente('productos')">
                     Productos
                 </button>
                 <button 
                     type="button" 
-                    class="btn btn-primary"
+                    class="btn btn-outline-primary"
                     [class.active]="componenteActual === 'categorias'"
                     (click)="cargarComponente('categorias')">
-                    Categorias
+                    Categorías
                 </button>
             </div>
         </div>
     </div>
+    
     <div class="row justify-content-center mt-4">
         <div class="col-12">
+            
             <app-producto-list *ngIf="componenteActual === 'productos'"></app-producto-list>
             <app-categorias-list *ngIf="componenteActual === 'categorias'"></app-categorias-list>
         </div>
     </div>
 </div>
-
 

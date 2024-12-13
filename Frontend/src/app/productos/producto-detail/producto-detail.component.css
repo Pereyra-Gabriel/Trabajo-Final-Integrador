@@ -1,0 +1,41 @@
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+  }
+
+  .table-hover tbody tr:hover {
+    background-color: #f1f5fa;
+  }
+
+  th {
+    width: 25%;
+    background-color: #e9ecef;
+    text-align: left;
+  }
+
+  td {
+    vertical-align: middle;
+  }
+
+  .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+  }
+
+  .img-fluid {
+    max-height: 200px;
+    object-fit: cover;
+  }
+
+  .alert-info {
+    font-size: 0.875rem;
+  }
+
+  @media (max-width: 768px) {
+    .btn span {
+      display: none;
+    }
+
+    .btn {
+      font-size: 0.875rem;
+    }
+  }

@@ -1,5 +1,5 @@
 export interface IProducto {
-  id?: number | undefined;
+  id: number;
   name: string;
   price: number;
   categoryId: number;

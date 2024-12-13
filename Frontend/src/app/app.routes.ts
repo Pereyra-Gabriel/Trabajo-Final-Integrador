@@ -11,6 +11,7 @@ import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard
 import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
 import { adminGuard } from './admin.guard';
 import { CategoriasListComponent } from './categorias/categorias-list/categorias-list.component';
+import { CategoriasVistaComponent } from './categorias/categorias-vista/categorias-vista.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -47,11 +48,11 @@ export const routes: Routes = [
         path: '',
         component: CategoriasListComponent,
       },
-      /*{
-        path: ':id/detail',
-        component: ProductoDetailComponent,
-      },
       {
+        path: 'vista',
+        component: CategoriasVistaComponent,
+      },
+      /*{
         path: ':id/edit',
         component: ProductoUpdateComponent,
       },

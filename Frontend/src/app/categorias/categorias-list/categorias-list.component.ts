@@ -6,7 +6,7 @@ import { AuthService } from '../../auth.service';
 import { ICategoria } from '../categoria.model';
 import { Subscription } from 'rxjs';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faMinus, faPen } from "@fortawesome/free-solid-svg-icons";
+import { faMinus, faPen, faPlus } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-categorias-list',
@@ -22,6 +22,7 @@ export class CategoriasListComponent implements OnInit {
 
   faMinus = faMinus;
   faPencil = faPen;
+  faPlus = faPlus;
 
   constructor(
     private categoriaService: CategoriasService,

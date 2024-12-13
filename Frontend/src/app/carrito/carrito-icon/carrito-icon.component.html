@@ -1,7 +1,14 @@
-<a (click)="irAlCarrito()" class="position-relative d-inline-block text-decoration-none">
-
-  <fa-icon [icon]="faCartShopping" size="2x"></fa-icon>
-  <span *ngIf="(cantidad$ | async) ?? 0 > 0"  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark">
+<a 
+  (click)="irAlCarrito()" 
+  class="position-relative d-inline-block text-decoration-none p-2"
+  aria-label="Ver carrito de compras"
+>
+  <fa-icon [icon]="faCartShopping" size="2x" class="text-primary"></fa-icon>
+  <span 
+    *ngIf="(cantidad$ | async) ?? 0 > 0"  
+    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark animate-badge"
+    aria-label="Cantidad de productos en el carrito"
+  >
     {{ cantidad$ | async }}
   </span>
 </a>

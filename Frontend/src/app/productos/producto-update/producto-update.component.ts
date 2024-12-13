@@ -81,10 +81,6 @@ export class ProductoUpdateComponent implements OnInit {
     if (this.form.valid) {
       const producto: IProducto = this.form.value;
 
-      if (!producto.id) {
-        delete producto.id;
-      }
-
       console.log('Formulario válido', producto);
 
       //

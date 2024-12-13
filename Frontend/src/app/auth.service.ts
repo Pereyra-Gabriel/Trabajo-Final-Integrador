@@ -15,6 +15,8 @@ export class AuthService {
 
   private isLoggedInSubject = new BehaviorSubject<boolean>(this.isLoggedIn());
 
+  public currentUser: {  username?: string} = {}
+
   public isLoggedIn$: Observable<boolean> =
     this.isLoggedInSubject.asObservable();
 
@@ -68,6 +70,7 @@ export class AuthService {
     return this.http.get<IUser>(`${this.apiUrl}/Users/profile`).pipe(
       tap((response) => {
         console.log('Respuesta del profile', response);
+        this.currentUser = response;
       })
     );
   }
