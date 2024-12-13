@@ -8,6 +8,12 @@ import { IProducto } from '../productos/producto.model';
 import { IVenta } from '../venta.model';
 import { VentasService } from '../ventas.service';
 import { AuthService } from '../auth.service';
+import {  faMinus, 
+          faPlus,
+          faTrash,
+          faCartArrowDown } from '@fortawesome/free-solid-svg-icons';
+import {  } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-carrito',
@@ -18,6 +24,10 @@ import { AuthService } from '../auth.service';
 })
 export class CarritoComponent implements OnInit {
   faCreditCard = faCreditCard;
+  faMinus = faMinus;
+  faPlus = faPlus;
+  faTrash = faTrash;
+  faCartArrowDown = faCartArrowDown
 
   items: ICarritoItem[] = [];
 

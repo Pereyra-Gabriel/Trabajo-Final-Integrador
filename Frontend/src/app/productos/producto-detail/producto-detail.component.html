@@ -1,44 +1,52 @@
-<a class="btn btn-secondary" [routerLink]="['/productos']">
-  <fa-icon [icon]="faAngleLeft"></fa-icon>
-  <span class="d-none d-md-inline"> Volver</span>
-</a>
+<h2 class="mb-4">Detalles del Producto</h2>
 
-<table class="table table" *ngIf="producto">
-  <tbody>
-    <tr>
-      <th>#</th>
-      <td>{{ producto.id }}</td>
-    </tr>
-    <tr>
-      <th>Nombre</th>
-      <td>{{producto.name}}</td>
-    </tr>
-    <tr>
-      <th>Precio</th>
-      <td>{{producto.price | currency}}</td>
-    </tr>
-    <tr>
-      <th>Despcripcion</th>
-      <td>{{producto.categoryId}}</td>
-    </tr>
-    <tr>
-      <th>Valoración</th>
-      <td>
-        <bar-rating [rate]="producto.score" max="5" readonly="true"></bar-rating>
-      </td>
-    </tr>
-    <tr>
-      <th>Imagen</th>
-      <td>
-        {{ producto.imageUrl }}
-        <img [src]="producto.imageUrl" class="img-fluid" alt="Responsive image"
-          *ngIf="producto.imageUrl; else sinImagen" />
-        <ng-template #sinImagen>
-          <div class="alert alert-info">
-            No hay imagen
+<!-- Botón para volver a la lista de productos -->
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <a class="btn btn-secondary btn-sm" [routerLink]="['/productos']">
+    <fa-icon [icon]="faAngleLeft"></fa-icon>
+    <span class="d-none d-md-inline"> Volver</span>
+  </a>
+</div>
+
+<!-- Tabla de detalles del producto -->
+<div class="table-responsive" *ngIf="producto">
+  <table class="table table-striped table-hover align-middle">
+    <tbody>
+      <tr>
+        <th scope="row">#</th>
+        <td>{{ producto.id }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Nombre</th>
+        <td>{{producto.name}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Precio</th>
+        <td>{{producto.price | currency}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Descripción</th>
+        <td>{{producto.categoryId}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Valoración</th>
+        <td>
+          <bar-rating [rate]="producto.score" max="5" readonly="true"></bar-rating>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Imagen</th>
+        <td>
+          <div *ngIf="producto.imageUrl; else sinImagen">
+            <img [src]="producto.imageUrl" class="img-fluid rounded" alt="Imagen del producto" />
           </div>
-        </ng-template>
-      </td>
-    </tr>
-  </tbody>
-</table>
+          <ng-template #sinImagen>
+            <div class="alert alert-info mb-0">
+              No hay imagen disponible
+            </div>
+          </ng-template>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
